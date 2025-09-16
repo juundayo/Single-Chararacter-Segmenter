@@ -1,4 +1,4 @@
-# Single-Chararacter-Segmenter
+# Single Character Segmentation Model
 A deep learning model that produces single-character-level bounding boxes given an input image of a handwritten Greek word. 
 
 # Data
