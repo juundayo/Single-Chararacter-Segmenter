@@ -6,7 +6,7 @@ Manually extracted single-characters from each word of the ICDAR 2012 Writer Ide
 `word.tif` -> `x1 y1 x2 y2 x3 y3 x4 y4`
 
 # Training
-5 different models were trained on our own data:
+5 different models were fine tuned on our own data:
 - Mask R-CNN
 - Cascade Mask R-CNN
 - SOLO
