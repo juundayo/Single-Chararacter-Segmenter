@@ -29,7 +29,7 @@ def parse_annotation_file(annotation_path: str) -> List[List[float]]:
                 continue
             
             # Parsing the 8 coordinates.
-            coords = list(map(float, line.split()))
+            coords = [int(round(c)) for c in map(float, line.split())]
             if len(coords) == 8:
                 polygons.append(coords)
     
@@ -53,9 +53,9 @@ def polygon_to_bbox(polygon: List[float]) -> Tuple[float, float, float, float]:
     x_max = max(xs)
     y_max = max(ys)
     
-    width = x_max - x_min
-    height = y_max - y_min
-    
+    width = max(1, x_max - x_min)
+    height = max(1, y_max - y_min)
+        
     return x_min, y_min, width, height
 
 # ----------------------------------------------------------------------------#
@@ -166,6 +166,9 @@ def create_coco_annotations(words_dir: str, chars_dir: str, output_json: str):
             # Converting to COCO bbox format.
             x, y, width, height = polygon_to_bbox(polygon)
             
+            if width < 2 or height < 2:
+                continue
+
             # Converting to COCO segmentation format.
             segmentation = polygon_to_segmentation(polygon)
             
@@ -233,9 +236,9 @@ def validate_annotations(output_json: str):
 # ----------------------------------------------------------------------------#
 
 if __name__ == "__main__":
-    words_dir = r"C:\Users\anton\Desktop\writers_100_126\WordImages"
-    chars_dir = r"C:\Users\anton\Desktop\writers_100_126\Chars"
-    output_json = r"C:\Users\anton\Desktop\writers_100_126\annotations_chars_coco.json"
+    words_dir = r"C:\Users\bgat\TranscriptMapping\Dataset\WordImages"
+    chars_dir = r"C:\Users\bgat\TranscriptMapping\Dataset\Chars"
+    output_json = r"C:\Users\bgat\TranscriptMapping\util\annotations_chars_coco.json"
     
     create_coco_annotations(words_dir, chars_dir, output_json)
     validate_annotations(output_json)
