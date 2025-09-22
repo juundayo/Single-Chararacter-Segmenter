@@ -58,7 +58,7 @@ cfg.train_pipeline = [
     dict(type='LoadImageFromFile'),
     dict(type='LoadAnnotations', with_bbox=True, with_mask=True),
     dict(type='Resize', img_scale=(900, 900), keep_ratio=True),
-    dict(type='RandomFlip', flip_ratio=0.5),
+    dict(type='RandomFlip', flip_ratio=0.01),
     dict(type='Normalize', **cfg.img_norm_cfg),
     dict(type='Pad', size_divisor=32),
     dict(type='DefaultFormatBundle'),
@@ -74,7 +74,7 @@ cfg.test_pipeline = [
         flip=False,
         transforms=[
             dict(type='Resize', keep_ratio=True),
-            dict(type='RandomFlip'),
+            dict(type='RandomFlip', flip_ratio=0.01),
             dict(type='Normalize', **cfg.img_norm_cfg),
             dict(type='Pad', size_divisor=32),
             dict(type='ImageToTensor', keys=['img']),
@@ -124,7 +124,7 @@ cfg.resume_from = None
 cfg.auto_resume = False
 
 # Optimizer.
-cfg.optimizer = dict(type='SGD', lr=0.0025, momentum=0.9, weight_decay=0.0001)
+cfg.optimizer = dict(type='SGD', lr=0.001, momentum=0.9, weight_decay=0.0001)
 cfg.optimizer_config = dict(grad_clip=None)
 
 # Learning rate schedule.
@@ -133,10 +133,10 @@ cfg.lr_config = dict(
     warmup='linear',
     warmup_iters=500,
     warmup_ratio=0.001,
-    step=[1]
+    step=[16, 32, 48]
 )
 
-cfg.runner = dict(type='EpochBasedRunner', max_epochs=2)
+cfg.runner = dict(type='EpochBasedRunner', max_epochs=75)
 cfg.log_config = dict(interval=10, hooks=[dict(type='TextLoggerHook')])
 cfg.evaluation = dict(interval=1, metric=['bbox', 'segm'])
 cfg.checkpoint_config = dict(interval=1, by_epoch=True, save_optimizer=True)
