@@ -11,8 +11,9 @@ import glob
 
 def parse_annotation_file(annotation_path: str) -> List[List[float]]:
     """
-    Parse annotation file with polygon coordinates.
-    Each line contains 8 numbers: x1 y1 x2 y2 x3 y3 x4 y4
+    Parses the annotation file with polygon coordinates.
+    Each line contains a variable number of coordinates representing one polygon.
+    Format: x1 y1 x2 y2 x3 y3 ... xn yn (any even number of coordinates)
     """
     polygons = []
     
@@ -23,15 +24,25 @@ def parse_annotation_file(annotation_path: str) -> List[List[float]]:
         with open(annotation_path, 'r', encoding='utf-8') as f:
             lines = f.readlines()
         
-        for line in lines:
+        for line_num, line in enumerate(lines, 1):
             line = line.strip()
             if not line:
                 continue
             
-            # Parsing the 8 coordinates.
+            # Parsing all coordinates from the line.
             coords = [int(round(c)) for c in map(float, line.split())]
-            if len(coords) == 8:
-                polygons.append(coords)
+            
+            # Each polygon must have an even number of coordinates (pairs of x,y).
+            if len(coords) % 2 != 0:
+                print(f"Warning: Line {line_num} has odd number of coordinates ({len(coords)}): {line}")
+                continue
+            
+            if len(coords) < 6:  # Need at least 3 points (6 coordinates) for a polygon.
+                print(f"Warning: Line {line_num} has too few coordinates ({len(coords)}): {line}")
+                continue
+            
+            polygons.append(coords)
+            print(f"Line {line_num}: Found polygon with {len(coords)//2} points")
     
     except Exception as e:
         print(f"Error reading annotation file {annotation_path}: {e}")
@@ -45,8 +56,9 @@ def polygon_to_bbox(polygon: List[float]) -> Tuple[float, float, float, float]:
     Converting polygon coordinates to 
     COCO bbox format [x, y, width, height]
     """
-    xs = [polygon[i] for i in range(0, 8, 2)]
-    ys = [polygon[i] for i in range(1, 8, 2)]
+    # Getting x and y coordinates from the polygon.
+    xs = polygon[0::2]  # All even indices: x1, x2, x3, ...
+    ys = polygon[1::2]  # All odd indices: y1, y2, y3, ...
     
     x_min = min(xs)
     y_min = min(ys)
@@ -62,9 +74,10 @@ def polygon_to_bbox(polygon: List[float]) -> Tuple[float, float, float, float]:
 
 def polygon_to_segmentation(polygon: List[float]) -> List[List[float]]:
     """
-    Converts polygon coordinates to COCO segmentation format
+    Converts polygon coordinates to COCO segmentation format.
+    COCO expects a list of points flattened: [[x1, y1, x2, y2, ..., xn, yn]]
     """
-    # COCO expects a list of points: [[x1, y1, x2, y2, x3, y3, x4, y4]]
+    # For polygons with many points, COCO expects the same flattened format.
     return [polygon]
 
 # ----------------------------------------------------------------------------#
