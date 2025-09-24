@@ -8,9 +8,38 @@ The full dataset is public at:
 [https://www.dropbox.com/scl/fi/g6y9ptqvmtzl96ieykey8/Dataset.zip?rlkey=1fhc2xb4kpyfdndfffgl28zdo&st=0lmmxt3u&dl=0](https://www.dropbox.com/scl/fi/lscf8p00bmnbqhvmun2sd/Dataset.zip?rlkey=m6uj2d2fi8dte6h6lc5v600cj&st=v4s0bbyx&dl=0)
 
 # Training
-5 different models were fine tuned on our own data:
-- Mask R-CNN
-- Cascade Mask R-CNN
-- SOLO
-- SOLO V2
-- Point Rend
+Two different models were fine tuned on our data for 40 epochs; Mask R-CNN and Cascade R-CNN.
+
+<table>
+  <thead>
+    <tr>
+      <th>Model</th>
+      <th>bbox<br>mAP</th>
+      <th>bbox<br>mAP@50</th>
+      <th>bbox<br>mAP@75</th>
+      <th>segm<br>mAP</th>
+      <th>segm<br>mAP@50</th>
+      <th>segm<br>mAP@75</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Mask R-CNN</strong></td>
+      <td>0.6545</td>
+      <td>0.9491</td>
+      <td>0.6816</td>
+      <td>0.6588</td>
+      <td>0.9621</td>
+      <td>0.6907</td>
+    </tr>
+    <tr>
+      <td><strong>Cascade Mask R-CNN</strong></td>
+      <td>X</td>
+      <td>X</td>
+      <td>X</td>
+      <td>X</td>
+      <td>X</td>
+      <td>X</td>
+    </tr>
+  </tbody>
+</table>
