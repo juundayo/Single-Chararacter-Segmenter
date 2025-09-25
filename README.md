@@ -3,7 +3,7 @@ A deep learning model that produces single-character-level bounding boxes given 
 
 <div align="center">
   <img width="500" height="298" alt="image" src="https://github.com/user-attachments/assets/36a3e21e-14b6-4537-9203-b92cb412819a" />
-  <img width="480" height="298" alt="image" src="https://github.com/user-attachments/assets/d9921d1d-0970-4665-ad9f-69a711cf8f4a" />
+  <img width="500" height="298" alt="image" src="https://github.com/user-attachments/assets/d9921d1d-0970-4665-ad9f-69a711cf8f4a" />
 </div>
 <div align="center">
   <img width="150" height="100" alt="image" src="https://github.com/user-attachments/assets/df82ecb2-e6bc-4cc8-8a23-8041774058d2" />
