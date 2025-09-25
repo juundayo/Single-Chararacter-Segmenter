@@ -36,8 +36,8 @@ torch.backends.cudnn.deterministic = False
 gc.collect()
 torch.cuda.empty_cache()
 
-config_file = r"C:\Users\bgat\TranscriptMapping\checkpoints\mask_rcnn_r50_fpn_1x_coco.py"
-checkpoint_file = r"C:\Users\bgat\TranscriptMapping\checkpoints\mask_rcnn_r50_fpn_1x_coco_20200205-d4b0c5d6.pth"
+config_file = r"C:\Users\bgat\TranscriptMapping\checkpoints_rcnn\mask_rcnn_r50_fpn_1x_coco.py"
+checkpoint_file = r"C:\Users\bgat\TranscriptMapping\checkpoints_rcnn\mask_rcnn_r50_fpn_1x_coco_20200205-d4b0c5d6.pth"
 
 cfg = Config.fromfile(config_file)
 
@@ -114,7 +114,7 @@ cfg.model.roi_head.bbox_head.num_classes = 1
 cfg.model.roi_head.mask_head.num_classes = 1
 
 # Work directory.
-cfg.work_dir = './work_dirs/character_segmentation'
+cfg.work_dir = './work_dirs/character_segmentation_rcnn'
 
 # CPU settings.
 cfg.gpu_ids = [0]  # For CPU and GPU training, keep it as [0].
