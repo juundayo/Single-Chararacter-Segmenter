@@ -13,12 +13,12 @@ A deep learning model that produces single-character-level bounding boxes given 
 
 # Dataset
 Manually extracted single-characters from each word of the ICDAR 2012 Writer Identification Contest. The data for each character was stored in a txt with polygons formatted as follows:
-`word.tif` -> `x1 y1 x2 y2 x3 y3 x4 y4`
+`word.tif` -> `x1 y1 x2 y2 ... xn yn`
 The full dataset is public at:
 [https://www.dropbox.com/scl/fi/g6y9ptqvmtzl96ieykey8/Dataset.zip?rlkey=1fhc2xb4kpyfdndfffgl28zdo&st=0lmmxt3u&dl=0](https://www.dropbox.com/scl/fi/lscf8p00bmnbqhvmun2sd/Dataset.zip?rlkey=m6uj2d2fi8dte6h6lc5v600cj&st=v4s0bbyx&dl=0)
 
 # Training
-Two different models were fine tuned on our data for 40 epochs; Mask R-CNN and Cascade R-CNN.
+Two different models were fine tuned on our data for 40 epochs; Mask R-CNN and Cascade Mask R-CNN.
 
 <table>
   <thead>
@@ -56,18 +56,18 @@ Two different models were fine tuned on our data for 40 epochs; Mask R-CNN and C
     </tr>
     <tr>
       <td><strong>Cascade Mask R-CNN</strong></td>
-      <td>0.6529</td>
-      <td>0.9400</td>
-      <td>0.6646</td>
-      <td>0.6663</td>
-      <td>0.6494</td>
-      <td>0.7408</td>
-      <td>0.6583</td>
-      <td>0.9410</td>
-      <td>0.6879</td>
-      <td>0.6881</td>
-      <td>0.6491</td>
-      <td>0.6410</td>
+      <td>0.6780</td>
+      <td>0.9510</td>
+      <td>0.7120</td>
+      <td>0.6990</td>
+      <td>0.6720</td>
+      <td>0.7830</td>
+      <td>0.6750</td>
+      <td>0.9630</td>
+      <td>0.7260</td>
+      <td>0.7110</td>
+      <td>0.6610</td>
+      <td>0.6440</td>
     </tr>
   </tbody>
 </table>
