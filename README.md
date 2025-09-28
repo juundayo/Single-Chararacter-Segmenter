@@ -1,4 +1,4 @@
-# Single Character Segmentation Model
+# Handwritten Single Character Segmentation Model
 A deep learning model that produces single-character-level bounding boxes given an input image of a handwritten Greek word. 
 
 <div align="center">
@@ -18,7 +18,7 @@ The full dataset is public at:
 [https://www.dropbox.com/scl/fi/g6y9ptqvmtzl96ieykey8/Dataset.zip?rlkey=1fhc2xb4kpyfdndfffgl28zdo&st=0lmmxt3u&dl=0](https://www.dropbox.com/scl/fi/lscf8p00bmnbqhvmun2sd/Dataset.zip?rlkey=m6uj2d2fi8dte6h6lc5v600cj&st=v4s0bbyx&dl=0)
 
 # Training
-Two different models were fine tuned on our data for 40 epochs; Mask R-CNN and Cascade Mask R-CNN.
+Three different models were fine tuned on our data for 40 epochs; Mask R-CNN and Cascade Mask R-CNN, and HTC.
 
 <table>
   <thead>
@@ -68,6 +68,21 @@ Two different models were fine tuned on our data for 40 epochs; Mask R-CNN and C
       <td>0.7110</td>
       <td>0.6610</td>
       <td>0.6440</td>
+    </tr>
+    <tr>
+      <td><strong>HTC</strong></td>
+      <td>0.6676</td>
+      <td>0.9586</td>
+      <td>0.6986</td>
+      <td>0.6890</td>
+      <td>0.6598</td>
+      <td>0.7801</td>
+      <td>0.6709</td>
+      <td>0.9622</td>
+      <td>0.7133</td>
+      <td>0.7039</td>
+      <td>0.6571</td>
+      <td>0.6661</td>
     </tr>
   </tbody>
 </table>
