@@ -20,70 +20,30 @@ The full dataset is public at:
 # Training
 Three different models were fine tuned on our data for 40 epochs; Mask R-CNN and Cascade Mask R-CNN, and HTC.
 
-<table>
-  <thead>
-    <tr>
-      <th>Model</th>
-      <th>bbox<br>mAP</th>
-      <th>bbox<br>mAP@50</th>
-      <th>bbox<br>mAP@75</th>
-      <th>bbox<br>mAP_s</th>
-      <th>bbox<br>mAP_m</th>
-      <th>bbox<br>mAP_l</th>
-      <th>segm<br>mAP</th>
-      <th>segm<br>mAP@50</th>
-      <th>segm<br>mAP@75</th>
-      <th>segm<br>mAP_s</th>
-      <th>segm<br>mAP_m</th>
-      <th>segm<br>mAP_l</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><strong>Mask R-CNN</strong></td>
-      <td>0.6545</td>
-      <td>0.9491</td>
-      <td>0.6816</td>
-      <td>0.6759</td>
-      <td>0.6481</td>
-      <td>0.6974</td>
-      <td>0.6588</td>
-      <td>0.9621</td>
-      <td>0.6907</td>
-      <td>0.6929</td>
-      <td>0.6467</td>
-      <td>0.6146</td>
-    </tr>
-    <tr>
-      <td><strong>Cascade Mask R-CNN</strong></td>
-      <td>0.6780</td>
-      <td>0.9510</td>
-      <td>0.7120</td>
-      <td>0.6990</td>
-      <td>0.6720</td>
-      <td>0.7830</td>
-      <td>0.6750</td>
-      <td>0.9630</td>
-      <td>0.7260</td>
-      <td>0.7110</td>
-      <td>0.6610</td>
-      <td>0.6440</td>
-    </tr>
-    <tr>
-      <td><strong>HTC</strong></td>
-      <td>0.6676</td>
-      <td>0.9586</td>
-      <td>0.6986</td>
-      <td>0.6890</td>
-      <td>0.6598</td>
-      <td>0.7801</td>
-      <td>0.6709</td>
-      <td>0.9622</td>
-      <td>0.7133</td>
-      <td>0.7039</td>
-      <td>0.6571</td>
-      <td>0.6661</td>
-    </tr>
-  </tbody>
-</table>
+  <!-- Epoch 40 Table -->
+  <table border="1" cellpadding="6" cellspacing="0">
+    <thead>
+      <tr>
+        <th>Metric</th>
+        <th>Mask R-CNN</th>
+        <th>Cascade Mask R-CNN</th>
+        <th>HTC</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>bbox_mAP</strong></td><td>0.6545</td><td><strong>0.678</strong></td><td>0.6676</td></tr>
+      <tr><td>bbox_mAP_50</td><td>0.9491</td><td>0.951</td><td><strong>0.9586</strong></td></tr>
+      <tr><td>bbox_mAP_75</td><td>0.6816</td><td><strong>0.712</strong></td><td>0.6986</td></tr>
+      <tr><td>bbox_mAP_s</td><td>0.6759</td><td><strong>0.699</strong></td><td>0.689</td></tr>
+      <tr><td>bbox_mAP_m</td><td>0.6481</td><td><strong>0.672</strong></td><td>0.6598</td></tr>
+      <tr><td>bbox_mAP_l</td><td>0.6974</td><td>0.783</td><td><strong>0.7801</strong></td></tr>
+      <tr><td><strong>segm_mAP</strong></td><td>0.6588</td><td><strong>0.675</strong></td><td>0.6709</td></tr>
+      <tr><td>segm_mAP_50</td><td>0.9621</td><td>0.963</td><td><strong>0.9622</strong></td></tr>
+      <tr><td>segm_mAP_75</td><td>0.6907</td><td><strong>0.726</strong></td><td>0.7133</td></tr>
+      <tr><td>segm_mAP_s</td><td>0.6929</td><td><strong>0.711</strong></td><td>0.7039</td></tr>
+      <tr><td>segm_mAP_m</td><td>0.6467</td><td><strong>0.661</strong></td><td>0.6571</td></tr>
+      <tr><td>segm_mAP_l</td><td>0.6146</td><td>0.644</td><td><strong>0.6661</strong></td></tr>
+    </tbody>
+  </table>
+</div>
 
