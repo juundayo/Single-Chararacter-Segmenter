@@ -14,8 +14,8 @@ A deep learning model that produces single-character-level bounding boxes given 
 # Dataset
 Manually extracted single-characters from each word of the ICDAR 2012 Writer Identification Contest. The data for each character was stored in a txt with polygons formatted as follows:
 `word.tif` -> `x1 y1 x2 y2 ... xn yn`
-The full dataset is public at:
-[https://www.dropbox.com/scl/fi/g6y9ptqvmtzl96ieykey8/Dataset.zip?rlkey=1fhc2xb4kpyfdndfffgl28zdo&st=0lmmxt3u&dl=0](https://www.dropbox.com/scl/fi/lscf8p00bmnbqhvmun2sd/Dataset.zip?rlkey=m6uj2d2fi8dte6h6lc5v600cj&st=v4s0bbyx&dl=0)
+
+The full dataset will become public after the ICDAR 2026 publication.
 
 # Training
 Three different models were fine tuned on our data for 40 epochs; Mask R-CNN and Cascade Mask R-CNN, and HTC.
