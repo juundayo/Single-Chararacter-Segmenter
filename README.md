@@ -20,7 +20,7 @@ The full dataset will become public after the ICDAR 2026 publication.
 # Training
 Three different models were fine tuned on our data for 40 epochs; Mask R-CNN and Cascade Mask R-CNN, and HTC.
 
-<!-- Updated Epoch 30 Table -->
+<!-- Epoch 2 Table -->
 <table border="1" cellpadding="6" cellspacing="0">
   <thead>
     <tr>
@@ -31,20 +31,21 @@ Three different models were fine tuned on our data for 40 epochs; Mask R-CNN and
     </tr>
   </thead>
   <tbody>
-    <tr><td><strong>bbox_mAP</strong></td><td>0.6262</td><td><strong>0.6277</strong></td><td>0.6676</td></tr>
-    <tr><td>bbox_mAP_50</td><td><strong>0.9595</strong></td><td>0.9554</td><td>0.9586</td></tr>
-    <tr><td>bbox_mAP_75</td><td>0.6657</td><td><strong>0.6713</strong></td><td>0.6986</td></tr>
-    <tr><td>bbox_mAP_s</td><td>0.6221</td><td><strong>0.6241</strong></td><td>0.689</td></tr>
-    <tr><td>bbox_mAP_m</td><td>0.6352</td><td><strong>0.6403</strong></td><td>0.6598</td></tr>
-    <tr><td>bbox_mAP_l</td><td><strong>0.6135</strong></td><td>0.602</td><td>0.7801</td></tr>
-    <tr><td><strong>segm_mAP</strong></td><td>0.663</td><td><strong>0.6879</strong></td><td>0.6709</td></tr>
-    <tr><td>segm_mAP_50</td><td>0.9607</td><td><strong>0.9648</strong></td><td>0.9622</td></tr>
-    <tr><td>segm_mAP_75</td><td>0.7352</td><td><strong>0.7684</strong></td><td>0.7133</td></tr>
-    <tr><td>segm_mAP_s</td><td>0.6429</td><td><strong>0.6693</strong></td><td>0.7039</td></tr>
-    <tr><td>segm_mAP_m</td><td>0.677</td><td><strong>0.6988</strong></td><td>0.6571</td></tr>
-    <tr><td>segm_mAP_l</td><td><strong>0.4525</strong></td><td>0.3525</td><td>0.6661</td></tr>
+    <tr><td><strong>bbox_mAP</strong></td><td>0.7407</td><td><strong>0.7674</strong></td><td>0.7629</td></tr>
+    <tr><td>bbox_mAP_50</td><td>0.9839</td><td><strong>0.9844</strong></td><td>0.9835</td></tr>
+    <tr><td>bbox_mAP_75</td><td>0.8471</td><td><strong>0.8569</strong></td><td>0.8524</td></tr>
+    <tr><td>bbox_mAP_s</td><td>0.7401</td><td>0.7728</td><td><strong>0.7770</strong></td></tr>
+    <tr><td>bbox_mAP_m</td><td>0.7446</td><td><strong>0.7678</strong></td><td>0.7606</td></tr>
+    <tr><td>bbox_mAP_l</td><td><strong>0.8010</strong></td><td>0.6020</td><td>0.6525</td></tr>
+    <tr><td><strong>segm_mAP</strong></td><td>0.7773</td><td>0.7789</td><td><strong>0.7895</strong></td></tr>
+    <tr><td>segm_mAP_50</td><td>0.9845</td><td><strong>0.9850</strong></td><td>0.9830</td></tr>
+    <tr><td>segm_mAP_75</td><td>0.8618</td><td>0.8611</td><td><strong>0.8704</strong></td></tr>
+    <tr><td>segm_mAP_s</td><td>0.7718</td><td>0.7764</td><td><strong>0.7862</strong></td></tr>
+    <tr><td>segm_mAP_m</td><td>0.7799</td><td>0.7798</td><td><strong>0.7905</strong></td></tr>
+    <tr><td>segm_mAP_l</td><td>0.5515</td><td>0.3535</td><td><strong>0.6010</strong></td></tr>
   </tbody>
 </table>
+
 
 
 
